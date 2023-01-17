@@ -49,3 +49,11 @@ const genBalancedDP = (n) => {
     }
     return dp[n];
 }
+
+const generateParenthesis = (n) => {
+
+}
+
+const backtrack = (n) => {
+    
+}
