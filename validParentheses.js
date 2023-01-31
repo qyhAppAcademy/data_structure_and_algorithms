@@ -29,11 +29,10 @@ var isValid = function (s) {
     for (let i = 0; i < s.length; i++) {
         if (open.includes(s[i])) {
             if (stack.length === 0 ||
-                open.indexOf(stack[stack.length - 1]) <= closed.indexOf(s[i])) {
+                open.indexOf(stack[stack.length - 1]) <= open.indexOf(s[i])) {
                 stack.push(s[i]);
             }
             else {
-                console.log(stack);
                 return false;
             }
         }
