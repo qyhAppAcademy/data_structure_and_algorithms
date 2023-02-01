@@ -40,8 +40,8 @@ export class Solution {
                 start += 1;
             }
             else {
-                count -= 1;
                 end += 1;
+                count -= 1;
             }
         }
         return maxCount;
