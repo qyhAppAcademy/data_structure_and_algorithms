@@ -13,6 +13,16 @@ const reverseNodes = (start, k) => {
     return [previous, current, next];
 }
 
+const nodesLength = (head) => {
+    let current = head;
+    let length = 0;
+    while(current){
+        current = current.next;
+        length += 1;
+    }
+    return length;
+}
+
 var reverseKGroup = function (head, k) {
     if (!head) {
         return head;
@@ -22,6 +32,6 @@ var reverseKGroup = function (head, k) {
     let lastCurrentPartNode;
     let lastPreviousPartNode;
     while (current && count < k) {
-        
+
     }
 };
