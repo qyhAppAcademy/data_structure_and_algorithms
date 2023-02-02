@@ -1,35 +1,42 @@
 var reverseBetween = function (head, left, right) {
-    if (!head) {
+    if (!head || !head.next | left === right) {
         return head;
     }
-    let beforeLeft = head;
+    let beforeLeft = left === 1 ? null : head;
     let count = 1;
-    while (beforeLeft && count < left) {
+    while (beforeLeft && count < left - 1) {
         beforeLeft = beforeLeft.next;
         count += 1;
     }
 
-    let afterRight = head;
+    let afterRight = right === 1 ? null : head;
     count = 1;
     while (afterRight && count <= right) {
         afterRight = afterRight.next;
         count += 1;
     }
 
-    let reversedLeftToRight = reverseNodes(beforeLeft.next, left, right);
+    let reversedLeftToRight = reverseNodes(beforeLeft ? beforeLeft.next : head, left, right);
     let tmp = reversedLeftToRight;
     while (left < right) {
         tmp = tmp.next;
         left += 1;
     }
-    if(beforeLeft){
-        beforeLeft.next = reversedLeftToRight;
-    }
     tmp.next = afterRight;
-    return head;
+
+    if (beforeLeft) {
+        beforeLeft.next = reversedLeftToRight;
+        return head;
+    }
+    else {
+        return reversedLeftToRight;
+    }
 };
 
 const reverseNodes = (head, left, right) => {
+    if (!head || !head.next) {
+        return null;
+    }
     let previous = null;
     let current = head;
     while (left <= right) {
