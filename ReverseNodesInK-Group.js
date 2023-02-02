@@ -10,7 +10,7 @@ const reverseNodes = (start, k) => {
         current = next;
         index += 1;
     }
-    return [previous, current, next];
+    return [previous, current];
 }
 
 const nodesLength = (head) => {
@@ -27,11 +27,27 @@ var reverseKGroup = function (head, k) {
     if (!head) {
         return head;
     }
+
     let previous = null;
     let current = head;
-    let lastCurrentPartNode;
-    let lastPreviousPartNode;
-    while (current && count < k) {
 
+    let count = 0;
+    let length = nodesLength(head);
+
+    let lastNodeOfCurrentPart;
+    let lastNodeOfPreviousPart = null;
+
+    while (current && length - count >= k) {
+        lastNodeOfCurrentPart = current;
+        [previous, current] = reverseNodes(current, k);
+        count += k;
+        if (lastNodeOfPreviousPart) {
+            lastNodeOfPreviousPart.next = previous;
+        }
+        else {
+            head = previous;
+        }
+        lastNodeOfPreviousPart = lastNodeOfCurrentPart;
     }
+    return head;
 };
