@@ -49,5 +49,6 @@ var reverseKGroup = function (head, k) {
         }
         lastNodeOfPreviousPart = lastNodeOfCurrentPart;
     }
+    lastNodeOfPreviousPart.next = current;
     return head;
 };
