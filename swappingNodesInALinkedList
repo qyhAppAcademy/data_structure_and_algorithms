@@ -1,3 +1,20 @@
-var swapNodes = function(head, k) {
-    
+var swapNodes = function (head, k) {
+    let front = null;
+    let end = null;
+    let current = head;
+    let count = 1;
+    while (current) {
+        if (count === k) {
+            front = current;
+            end = head;
+        }
+        current = current.next;
+        if (end) {
+            end = end.next;
+        }
+    }
+    let tmp = front.val;
+    front.val = end.val;
+    end.val = tmp;
+    return head;
 };
