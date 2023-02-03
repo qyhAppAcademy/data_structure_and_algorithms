@@ -23,13 +23,25 @@ var reverseEvenLengthGroups = function (head) {
                 let tmp = prev.next;
                 prev.next = reverse;
                 prev = tmp;
-                l += 1;
                 node = prev;
-                n = 0;
             }
             else {
-
+                prev = node;
             }
+            l += 1;
+            n = 0;
         }
     }
+    if (n > 0 && n % 2 === 0) {
+        let current = prev.next;
+        let previous = null;
+        while (current) {
+            let next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        prev.next = previous;
+    }
+    return head;
 };
