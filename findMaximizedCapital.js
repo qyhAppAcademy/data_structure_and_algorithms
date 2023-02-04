@@ -1,3 +1,30 @@
+var findMaximizedCapital = function (k, w, profits, capital) {
+    let currentCapital = w;
+
+    let capitalMinHeap = new MinHeap();
+    for (let i = 0; i < capital.length; i++) {
+        capitalMinHeap.offer([capital[i], i]);
+    }
+
+    let profitsMaxHeap = new MinHeap();
+    for (let count = 0; count < k; count++) {
+        while (capitalMinHeap.size() > 0 && capitalMinHeap.peek()[0] <= currentCapital) {
+            let minCap = capitalMinHeap.poll();
+            let idx = minCap[1];
+            profitsMaxHeap.offer([-1 * profits[idx], idx]);
+        }
+
+        if (profitsMaxHeap.size() === 0) {
+            break;
+        }
+
+        let maxProfit = profitsMaxHeap.poll();
+        currentCapital += -1 * maxProfit[0];
+    }
+
+    return currentCapital
+};
+
 class MinHeap {
     constructor(data = new Array()) {
         this.data = data;
