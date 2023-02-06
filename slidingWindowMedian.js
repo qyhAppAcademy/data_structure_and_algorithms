@@ -11,11 +11,19 @@ var medianSlidingWindow = function (nums, k) {
     }
     let balance = 0;
     for (let i = k; i < nums.length; i++) {
+        if (k % 2 === 1) {
+            medians.push(firstHalf.peek() * -1.0);
+        }
+        else {
+            medians.push((firstHalf.peek() * -1.0 + secondHalf.peek() * 1.0) * 0.5);
+        }
         let outgoingNum = nums[i - k];
-        if (smallHalf.size() === largeHalf.size()) {
+        let incomingNum = nums[i];
+
+        if (outgoingNum == smallHalf.peek() * -1.0 || outgoingNum == largeHalf.peek()) {
 
         }
-        else if () {
+        else {
 
         }
     }
