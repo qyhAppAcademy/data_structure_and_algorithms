@@ -1,9 +1,23 @@
 var medianSlidingWindow = function (nums, k) {
-    const minHeap = new MinHeap();
-    const maxHeap = new MinHeap();
+    const smallHalf = new MinHeap();
+    const largeHalf = new MinHeap();
     const outgoingNums = {};
-    for (let i = 0; i <= nums.length - k; i++) {
-        
+    const medians = [];
+    for (let i = 0; i < k; i++) {
+        smallHalf.offer(-1 * nums[i]);
+    }
+    for (let i = 0; i < Math.floor(k / 2); i++) {
+        largeHalf.offer(-1 * smallHalf.poll());
+    }
+    let balance = 0;
+    for (let i = k; i < nums.length; i++) {
+        let outgoingNum = nums[i - k];
+        if (smallHalf.size() === largeHalf.size()) {
+
+        }
+        else if () {
+
+        }
     }
 };
 
