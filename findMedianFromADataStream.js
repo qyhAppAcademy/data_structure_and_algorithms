@@ -34,6 +34,42 @@ MedianFinder.prototype.findMedian = function () {
     }
 };
 
+var MedianFinder = function () {
+    this.smallHalf = new MinHeap();
+    this.largeHalf = new MinHeap();
+};
+
+/** 
+ * @param {number} num
+ * @return {void}
+ */
+MedianFinder.prototype.addNum = function (num) {
+    if (this.largeHalf.size() === 0 || this.largeHalf.peek() < num) {
+        this.largeHalf.offer(num);
+    }
+    else {
+        this.smallHalf.offer(-1 * num);
+    }
+    if (this.largeHalf.size() > this.smallHalf.size() + 1) {
+        this.smallHalf.offer(-1 * this.largeHalf.poll());
+    }
+    else if (this.largeHalf.size() < this.smallHalf.size()) {
+        this.largeHalf.offer(-1 * this.smallHalf.poll());
+    }
+};
+
+/**
+ * @return {number}
+ */
+MedianFinder.prototype.findMedian = function () {
+    if (this.largeHalf.size() === this.smallHalf.size()) {
+        return (-1 * this.smallHalf.peek() + this.largeHalf.peek()) / 2.0;
+    }
+    else {
+        return this.largeHalf.peek();
+    }
+};
+
 class MinHeap {
     constructor(data = new Array()) {
         this.data = data;
