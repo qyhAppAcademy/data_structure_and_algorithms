@@ -1,5 +1,6 @@
 var MedianFinder = function () {
-
+    this.smallHalf = new MinHeap();
+    this.largeHalf = new MinHeap();
 };
 
 /** 
@@ -7,14 +8,30 @@ var MedianFinder = function () {
  * @return {void}
  */
 MedianFinder.prototype.addNum = function (num) {
-
+    if (this.smallHalf.size() === 0 || -1 * this.smallHalf.peek() >= num) {
+        this.smallHalf.offer(- 1 * num);
+    }
+    else {
+        this.largeHalf.offer(num);
+    }
+    if (this.smallHalf.size() > this.largeHalf.size() + 1) {
+        this.largeHalf.offer(-1 * this.smallHalf.poll());
+    }
+    else if (this.smallHalf.size() < this.largeHalf.size()) {
+        this.smallHalf.offer(-1 * this.largeHalf.poll());
+    }
 };
 
 /**
  * @return {number}
  */
 MedianFinder.prototype.findMedian = function () {
-
+    if (this.smallHalf.size() === this.largeHalf.size()) {
+        return (-1 * this.smallHalf.peek()) / 2.0 + this.largeHalf.peek() / 2.0;
+    }
+    else {
+        return -1 * (this.smallHalf.peek() / 1.0);
+    }
 };
 
 class MinHeap {
