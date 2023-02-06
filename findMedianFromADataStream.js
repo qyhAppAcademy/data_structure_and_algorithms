@@ -1,4 +1,23 @@
-export class MinHeap {
+var MedianFinder = function () {
+
+};
+
+/** 
+ * @param {number} num
+ * @return {void}
+ */
+MedianFinder.prototype.addNum = function (num) {
+
+};
+
+/**
+ * @return {number}
+ */
+MedianFinder.prototype.findMedian = function () {
+
+};
+
+class MinHeap {
     constructor(data = new Array()) {
         this.data = data;
         this.compareVal = (a, b) => a - b;
