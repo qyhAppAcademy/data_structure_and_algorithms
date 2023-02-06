@@ -1,3 +1,12 @@
+var medianSlidingWindow = function (nums, k) {
+    const minHeap = new MinHeap();
+    const maxHeap = new MinHeap();
+    const outgoingNums = {};
+    for (let i = 0; i <= nums.length - k; i++) {
+        
+    }
+};
+
 class MinHeap {
     constructor(data = new Array()) {
         this.data = data;
