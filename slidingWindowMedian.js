@@ -43,12 +43,10 @@ var medianSlidingWindow = function (nums, k) {
             smallHalf.offer(largeHalf.poll() * -1);
             balance += 1;
         }
-
         if (balance > 0) {
             largeHalf.offer(smallHalf.poll() * -1);
             balance -= 1;
         }
-
         while (smallHalf.size() > 0 &&
             (smallHalf.peek() * -1) in outgoingNums &&
             outgoingNums[smallHalf.peek() * -1] > 0) {
