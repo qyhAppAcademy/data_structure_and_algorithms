@@ -4,29 +4,69 @@ var medianSlidingWindow = function (nums, k) {
     const outgoingNums = {};
     const medians = [];
     for (let i = 0; i < k; i++) {
-        smallHalf.offer(-1 * nums[i]);
+        smallHalf.offer(nums[i] * -1);
     }
     for (let i = 0; i < Math.floor(k / 2); i++) {
-        largeHalf.offer(-1 * smallHalf.poll());
+        largeHalf.offer(smallHalf.poll() * -1);
     }
-    let balance = 0;
     for (let i = k; i < nums.length; i++) {
         if (k % 2 === 1) {
-            medians.push(firstHalf.peek() * -1.0);
+            medians.push(smallHalf.peek() * -1.0);
         }
         else {
-            medians.push((firstHalf.peek() * -1.0 + secondHalf.peek() * 1.0) * 0.5);
+            medians.push((smallHalf.peek() * -1.0 + largeHalf.peek() * 1.0) * 0.5);
         }
         let outgoingNum = nums[i - k];
         let incomingNum = nums[i];
-
-        if (outgoingNum == smallHalf.peek() * -1.0 || outgoingNum == largeHalf.peek()) {
-
+        let balance = 0;
+        if (outgoingNum <= smallHalf.peek() * -1) {
+            balance -= 1;
         }
         else {
+            balance += 1;
+        }
+        if (outgoingNum in outgoingNums) {
+            outgoingNums[outgoingNum] += 1;
+        }
+        else {
+            outgoingNums[outgoingNum] = 1;
+        }
+        if (smallHalf.size() > 0 && incomingNum <= smallHalf.peek() * -1) {
+            smallHalf.offer(incomingNum * -1);
+            balance += 1;
+        }
+        else {
+            largeHalf.offer(incomingNum);
+            balance -= 1;
+        }
+        if (balance < 0) {
+            smallHalf.offer(largeHalf.poll() * -1);
+            balance += 1;
+        }
 
+        if (balance > 0) {
+            largeHalf.offer(smallHalf.poll() * -1);
+            balance -= 1;
+        }
+
+        while (smallHalf.size() > 0 &&
+            (smallHalf.peek() * -1) in outgoingNums &&
+            outgoingNums[smallHalf.peek() * -1] > 0) {
+            outgoingNums[smallHalf.poll() * -1] -= 1;
+        }
+        while (largeHalf.size() > 0 &&
+            largeHalf.peek() in outgoingNums &&
+            outgoingNums[largeHalf.peek()] > 0) {
+            outgoingNums[largeHalf.poll()] -= 1;
         }
     }
+    if (k % 2 === 1) {
+        medians.push(smallHalf.peek() * -1.0);
+    }
+    else {
+        medians.push((smallHalf.peek() * -1.0 + largeHalf.peek() * 1.0) * 0.5);
+    }
+    return medians;
 };
 
 class MinHeap {
