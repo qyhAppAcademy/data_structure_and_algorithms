@@ -1,6 +1,6 @@
 var kSmallestPairs = function (nums1, nums2, k) {
     const minHeap = new MinHeap();
-    for (let i = 0; i < nums1.length; i++) {
+    for (let i = 0; i < Math.min(nums1.length, k); i++) {
         minHeap.offer([nums1[i] + nums2[0], i, 0]);
     }
     let count = 0;
