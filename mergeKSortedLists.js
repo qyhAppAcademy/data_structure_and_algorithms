@@ -1,5 +1,17 @@
 var mergeKLists = function (lists) {
-
+    if (lists.length === 0) {
+        return null;
+    }
+    let steps = 1;
+    while (steps < lists.length) {
+        for (let i = 0; i < lists.length; i += steps * 2) {
+            if (i + steps < lists.length) {
+                lists[i] = mergeTwoLists(lists[i], lists[i + steps]);
+            }
+        }
+        steps *= 2;
+    }
+    return lists[0];
 };
 
 const mergeTwoLists = (list1, list2) => {
@@ -17,6 +29,12 @@ const mergeTwoLists = (list1, list2) => {
             p2 = p2.next;
         }
         prev = prev.next;
+    }
+    if (p1) {
+        prev.next = p1;
+    }
+    else {
+        prev.next = p2;
     }
     return head.next;
 }
