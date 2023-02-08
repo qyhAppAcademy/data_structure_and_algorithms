@@ -8,8 +8,7 @@ var kSmallestNumber = function (lists, k) {
 
     for (let index = 0; index < listLength; index++) {
         // if there are no elements in the input lists, return []
-        if (lists[index] == emptyList) {
-            index += 1
+        if (lists[index].length === 0) {
             continue
         }
 
