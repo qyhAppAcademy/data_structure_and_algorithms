@@ -1,5 +1,17 @@
 var kthSmallest = function (matrix, k) {
-    
+    const minHeap = new MinHeap();
+    for (let row = 0; row < matrix.length; row++) {
+        minHeap.offer([matrix[row][0], row, 0]);
+    }
+    let count = 0;
+    while (minHeap.size() > 0 && count < k - 1) {
+        let [ele, i, j] = minHeap.poll();
+        if (j + 1 < matrix[i].length) {
+            minHeap.offer([matrix[i][j + 1], i, j + 1]);
+        }
+        count += 1;
+    }
+    return minHeap.poll()[0];
 };
 
 class MinHeap {
