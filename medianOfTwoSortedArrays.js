@@ -1,9 +1,40 @@
 var findMedianSortedArrays = function (nums1, nums2) {
-    let minHeap = new MinHeap();
-    minHeap.offer([1 * -1]);
-    minHeap.offer([2 * -1]);
+    const minHeap = new MinHeap();
+    let m = nums1.length;
+    let n = nums2.length;
+    let p1 = 0;
+    let p2 = 0;
+    let count = 0;
+    let k = (m + n) % 2 === 1 ? Math.ceil((m + n) / 2.0) : (m + n) / 2 + 1;
+    while (p1 < m && p2 < n && count < k) {
+        if (nums1[p1] <= nums2[p2]) {
+            minHeap.offer([-1 * nums1[p1]]);
+            p1 += 1;
+        }
+        else {
+            minHeap.offer([-1 * nums2[p2]]);
+            p2 += 1;
+        }
+        count += 1;
+    }
+    while (count < k) {
+        if (p1 < m) {
+            minHeap.offer([-1 * nums1[p1]]);
+            p1 += 1;
+        }
+        if (p2 < n) {
+            minHeap.offer([-1 * nums2[p2]]);
+            p2 += 1;
+        }
+        count += 1;
+    }
     console.log(minHeap);
-    console.log(minHeap.peek());
+    if ((m + n) % 2 === 1) {
+        return minHeap.peek()[0] * -1.0;
+    }
+    else {
+        return (minHeap.poll()[0] * -1.0 + minHeap.peek()[0] * -1.0) / 2.0;
+    }
 };
 
 class MinHeap {
