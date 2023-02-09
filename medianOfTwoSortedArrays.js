@@ -1,7 +1,7 @@
 var findMedianSortedArrays = function (nums1, nums2) {
     let minHeap = new MinHeap();
-    minHeap.offer(1);
-    minHeap.offer(2);
+    minHeap.offer([1 * -1]);
+    minHeap.offer([2 * -1]);
     console.log(minHeap);
     console.log(minHeap.peek());
 };
@@ -111,3 +111,5 @@ class MinHeap {
         return this.data.length;
     }
 }
+
+findMedianSortedArrays();
