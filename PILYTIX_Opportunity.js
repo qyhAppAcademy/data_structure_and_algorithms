@@ -1,0 +1,4 @@
+// Assignment Details
+// 1. Start with PILYTIX - provided CodeSandbox template that represents a basic React project which is already set up to display a table of some sample sales opportunities.
+// The project contains a package.json file with a few dependencies already added(namely React and Material UI), but feel free to add any additional dependencies that you would like(so long as you do not deviate from using React components for your main UI).
+// The file opportunities.json includes an array of objects where each object represents a single sales opportunity with some AI info layered in.The first one is shown in the Appendix as an illustrative example, but your code should read only from the existing json file(which is essentially serving as a stand -in for a database).
