@@ -35,3 +35,6 @@
 
 // Bonus Points
 // 1. You enable the user to change to the next or previous opportunity cards without having to close the card and select again from the table(either using arrow keys or a button for “Next” and “Previous”).
+// 2. You consider the best visual way to show each element of nested data on the card – replacing text for visuals such as charts and graphics when feasible.
+// 3. You allow the UI to still look visually appealing in the case that a property is null or undefined.
+// 4. You consider the responsiveness of your solution to different screen sizes, and make sure that it still looks nice at small screen sizes even when a nested property has a large amount of elements.
