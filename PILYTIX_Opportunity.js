@@ -38,3 +38,11 @@
 // 2. You consider the best visual way to show each element of nested data on the card – replacing text for visuals such as charts and graphics when feasible.
 // 3. You allow the UI to still look visually appealing in the case that a property is null or undefined.
 // 4. You consider the responsiveness of your solution to different screen sizes, and make sure that it still looks nice at small screen sizes even when a nested property has a large amount of elements.
+
+// Tips
+// 1. You are free to use whatever components you want and to style them however you like, but if you do stick to Material UI, we recommend reading how to customize Material UI for your design.At the very least, we encourage you to read about how you can enhance and style the existing MUI Table.
+// 2. Some of the nested structures have data in them that could lend themselves well to charts.We encourage you to try to integrate one of the libraries below:
+// Nivo
+// Formidable
+// ReactChart
+// D3 is a powerful way to build fully - custom graphics for data, but unless you’re already familiar with it, it would not be recommended over the others that are easier to quickly implement out - of - the - box charts.
