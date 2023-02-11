@@ -32,3 +32,6 @@
 // You attach a few screenshots of your finished solution in the email(as a backup in the rare event that there is an error with your CodeSandbox when we test it).
 // You include the time you spent on the assignment in your email AND in a comment in your code.
 // You comment your name and email in a block comment in your code and testify that the work done on this take - home assignment is your own(simply meaning you didn’t work with another person, but you are completely free to use whatever web resources you like).
+
+// Bonus Points
+// 1. You enable the user to change to the next or previous opportunity cards without having to close the card and select again from the table(either using arrow keys or a button for “Next” and “Previous”).
