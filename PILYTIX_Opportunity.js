@@ -24,3 +24,5 @@
 
 // Minimum Submission Requirements
 // 1. You build your UI using React with a project built on our provided CodeSandbox template.
+// 2. Your project contains a well - styled custom pop - up card component that is set to open on table click to show an enhanced view of the opportunity selected.
+// 3. The pop - up card displays(through text, graphics or charts) ALL information in the opportunity object(i.e., those elements that were already in the table AND the nested elements not in the table - see the Appendix for an example opportunity).
