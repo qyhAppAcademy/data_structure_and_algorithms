@@ -10,3 +10,8 @@
 // Your core challenge is to figure out the best way to display all of this nested data, and note that you need not display the raw text as is – you are encouraged to add charts or graphics for more visual storytelling.
 // You must also build functionality that allows the user to close the card to return to the table to choose a new opportunity.
 //     Bonus: Enable the user to swap to successive or previous opportunity cards with the keyboard arrow keys or by hitting “Next” / “Previous” buttons.
+// 3. Your secondary goal is all about UI / UX design: make the entire page(both the card you build and the provided table) look aesthetically pleasing and be intuitive and responsive to end users.
+// Consider adding new fonts and colors to the existing table as well as to the cards.
+// Try for a cohesive vision between the way the table looks and the way your pop - up card looks.
+// Consider what happens when nested data elements are different lengths.
+//     Bonus: Check your UI at various(but reasonable) screen sizes and style it to adjust properly.
