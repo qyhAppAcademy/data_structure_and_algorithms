@@ -48,3 +48,5 @@
 // D3 is a powerful way to build fully - custom graphics for data, but unless you’re already familiar with it, it would not be recommended over the others that are easier to quickly implement out - of - the - box charts.
 
 // Appendix
+// Example Opportunity Object
+// The following is an example opportunity object from opportunities.json that your UI card should be able to display:
