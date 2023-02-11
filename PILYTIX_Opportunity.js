@@ -21,3 +21,6 @@
 // We are especially focused on design as it is extremely important for this role since your responsibilities will somewhat overlap with those of a UI / UX designer.Any submission that simply provides bare - bones functionality without styling will be insufficient to advance to the next round.
 
 // This project is intended to take around 4 - 6 hours of time for a knowledgeable and skilled React developer, but you are free to spend more or less time on it based on your own abilities.We ask that you do keep track of how much time you spend on it, as it will help us to gauge the quality of your submission.
+
+// Minimum Submission Requirements
+// 1. You build your UI using React with a project built on our provided CodeSandbox template.
