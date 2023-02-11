@@ -26,3 +26,9 @@
 // 1. You build your UI using React with a project built on our provided CodeSandbox template.
 // 2. Your project contains a well - styled custom pop - up card component that is set to open on table click to show an enhanced view of the opportunity selected.
 // 3. The pop - up card displays(through text, graphics or charts) ALL information in the opportunity object(i.e., those elements that were already in the table AND the nested elements not in the table - see the Appendix for an example opportunity).
+// 4. The user can close the pop - up card to see the table again so they can click another row to bring up a new pop - up card.
+// 5. You add some customization and superior formatting to the existing bare - bones MUI table and ensure that it is styled in a way consistent with your pop - up card.
+// 6. You submit your assignment by emailing a link to your completed CodeSandbox project. (Note: Any save made to a file in the CodeSandbox template will create a new URL for you to send - but make sure that you save all files in your CodeSandbox before you submit as the changes you see locally only take effect in the URL upon save!)
+// You attach a few screenshots of your finished solution in the email(as a backup in the rare event that there is an error with your CodeSandbox when we test it).
+// You include the time you spent on the assignment in your email AND in a comment in your code.
+// You comment your name and email in a block comment in your code and testify that the work done on this take - home assignment is your own(simply meaning you didn’t work with another person, but you are completely free to use whatever web resources you like).
