@@ -216,3 +216,4 @@
 //Spent a lot of time trying to make tooltip work
 //Made tooltip appear
 //Made tooltip output d.data
+//Made tooltip output position correctly
