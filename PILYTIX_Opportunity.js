@@ -253,6 +253,8 @@
 // 1. You build your UI using React with a project built on our provided CodeSandbox template.
 
 // 3. The pop-up card displays (through text, graphics or charts) ALL information in the opportunity object (i.e., those elements that were already in the table AND the nested elements not in the table - see the Appendix for an example opportunity).
+// 4. The user can close the pop-up card to see the table again so they can click another row to bring up a new pop-up card.
 
 // Minimum Submission Requirement (Yet to be done)
 // 2. Your project contains a well-styled custom pop-up card component that is set to open on table click to show an enhanced view of the opportunity selected.
+// 5. You add some customization and superior formatting to the existing bare-bones MUI table and ensure that it is styled in a way consistent with your pop-up card.
