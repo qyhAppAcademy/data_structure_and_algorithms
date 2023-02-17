@@ -222,3 +222,4 @@
 // 1. Fork the PILYTIX - provided CodeSandbox template
 // 2. but feel free to add any additional dependencies that you would like (so long as you do not deviate from using React components for your main UI).
 // 3. but your code should read only from the existing json file (which is essentially serving as a stand-in for a database).
+// 4. Your primary goal is to build a UI such that upon clicking an opportunity row in the table, a pop-up card such as the Material UI Card will appear centered on the screen that will show ALL the available information about the selected opportunity.
