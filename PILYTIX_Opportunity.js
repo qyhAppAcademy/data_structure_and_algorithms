@@ -248,3 +248,5 @@
 // (B) whether you have the design chops to find a way to make your work visually appealing.
 // We are especially focused on design as it is extremely important for this role since your responsibilities will somewhat overlap with those of a UI/UX designer. 
 // Any submission that simply provides bare-bones functionality without styling will be insufficient to advance to the next round.
+
+// Minimum Submission Requirement
