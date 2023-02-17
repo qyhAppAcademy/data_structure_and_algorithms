@@ -239,3 +239,4 @@
 // 11. Your secondary goal is all about UI/UX design: make the entire page (both the card you build and the provided table) look aesthetically pleasing and be intuitive and responsive to end users.
 // 12. Consider adding new fonts and colors to the existing table as well as to the cards.
 // 13. Try for a cohesive vision between the way the table looks and the way your pop-up card looks.
+// 15. Bonus: Check your UI at various (but reasonable) screen sizes and style it to adjust properly.
