@@ -258,3 +258,10 @@
 // Minimum Submission Requirement (Yet to be done)
 // 2. Your project contains a well-styled custom pop-up card component that is set to open on table click to show an enhanced view of the opportunity selected.
 // 5. You add some customization and superior formatting to the existing bare-bones MUI table and ensure that it is styled in a way consistent with your pop-up card.
+
+// Submission Method
+// 6.
+// You submit your assignment by emailing a link to your completed CodeSandbox project. (Note: Any save made to a file in the CodeSandbox template will work the same as choosing the “Fork” button and creating a new URL for you to send - but make sure that you save all files in your CodeSandbox before you submit – the changes you see locally only take effect in the URL upon save!) Your URL should be of the format https://codesandbox.io/s/XXXX
+// You attach a few screenshots of your finished solution in the email(as a backup in the rare event that there is an error with your CodeSandbox when we test it).
+// You include the time you spent on the assignment in your email AND in a comment in your code.
+// You comment your name and email in a block comment in your code and testify that the work done on this take - home assignment is your own(simply meaning you didn’t work with another person, but you are completely free to use whatever web resources you like).
