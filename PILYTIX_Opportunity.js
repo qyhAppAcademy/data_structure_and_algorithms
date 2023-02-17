@@ -226,6 +226,7 @@
 
 // 6. There are also some nested properties in each object (e.g., a history of PILYTIX and rep probabilities, a list of factors increasing/decreasing win probability) that are not currently displayed in the table.
 // 7. These properties are the main reason for the card’s existence as they would be difficult to impossible to display adequately in the table.
+// 8. Note that the nested properties are variable length arrays and can sometimes be missing altogether.
 
 // Need to do
 // 5. Some properties in each opportunity object(e.g., opp name, rep’s name, PILYTIX score, etc.) are already in the table and should still be prominently displayed in the card as well.
