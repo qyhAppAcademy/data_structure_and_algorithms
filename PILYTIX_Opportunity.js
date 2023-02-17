@@ -224,5 +224,8 @@
 // 3. but your code should read only from the existing json file (which is essentially serving as a stand-in for a database).
 // 4. Your primary goal is to build a UI such that upon clicking an opportunity row in the table, a pop-up card such as the Material UI Card will appear centered on the screen that will show ALL the available information about the selected opportunity.
 
+// 6. There are also some nested properties in each object (e.g., a history of PILYTIX and rep probabilities, a list of factors increasing/decreasing win probability) that are not currently displayed in the table.
+
+
 // Need to do
 // 5. Some properties in each opportunity object(e.g., opp name, rep’s name, PILYTIX score, etc.) are already in the table and should still be prominently displayed in the card as well.
