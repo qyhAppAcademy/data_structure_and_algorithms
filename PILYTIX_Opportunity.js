@@ -220,3 +220,4 @@
 
 //02/17//2023
 // 1. Fork the PILYTIX - provided CodeSandbox template
+// 2. but feel free to add any additional dependencies that you would like (so long as you do not deviate from using React components for your main UI).
