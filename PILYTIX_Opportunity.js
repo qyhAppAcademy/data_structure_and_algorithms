@@ -259,6 +259,10 @@
 // 2. Your project contains a well-styled custom pop-up card component that is set to open on table click to show an enhanced view of the opportunity selected.
 // 5. You add some customization and superior formatting to the existing bare-bones MUI table and ensure that it is styled in a way consistent with your pop-up card.
 
+// Bonus Points (Done)
+// 1. You enable the user to change to the next or previous opportunity cards without having to close the card and select again from the table (either using arrow keys or a button for “Next” and “Previous”).
+// 2. You consider the best visual way to show each element of nested data on the card – replacing text for visuals such as charts and graphics when feasible.
+
 // Submission Method
 // 6.
 // You submit your assignment by emailing a link to your completed CodeSandbox project. (Note: Any save made to a file in the CodeSandbox template will work the same as choosing the “Fork” button and creating a new URL for you to send - but make sure that you save all files in your CodeSandbox before you submit – the changes you see locally only take effect in the URL upon save!) Your URL should be of the format https://codesandbox.io/s/XXXX
