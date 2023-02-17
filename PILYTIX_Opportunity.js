@@ -228,6 +228,7 @@
 // 7. These properties are the main reason for the card’s existence as they would be difficult to impossible to display adequately in the table.
 // 8. Note that the nested properties are variable length arrays and can sometimes be missing altogether.
 // 9. You must also build functionality that allows the user to close the card to return to the table to choose a new opportunity.
+// 10. Bonus: Enable the user to swap to successive or previous opportunity cards with the keyboard arrow keys or by hitting “Next” / “Previous” buttons.
 
 // Need to do
 // 5. Some properties in each opportunity object(e.g., opp name, rep’s name, PILYTIX score, etc.) are already in the table and should still be prominently displayed in the card as well.
