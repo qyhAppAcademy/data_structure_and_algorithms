@@ -249,5 +249,10 @@
 // We are especially focused on design as it is extremely important for this role since your responsibilities will somewhat overlap with those of a UI/UX designer. 
 // Any submission that simply provides bare-bones functionality without styling will be insufficient to advance to the next round.
 
-// Minimum Submission Requirement
+// Minimum Submission Requirement (Done)
 // 1. You build your UI using React with a project built on our provided CodeSandbox template.
+
+// 3. The pop-up card displays (through text, graphics or charts) ALL information in the opportunity object (i.e., those elements that were already in the table AND the nested elements not in the table - see the Appendix for an example opportunity).
+
+// Minimum Submission Requirement (Yet to be done)
+// 2. Your project contains a well-styled custom pop-up card component that is set to open on table click to show an enhanced view of the opportunity selected.
