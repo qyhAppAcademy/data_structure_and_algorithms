@@ -236,6 +236,7 @@
 
 // (A) have the development capabilities to build an intuitive UI for this type of nested data
 // This project is intended to take around 4-6 hours of time for a knowledgeable and skilled React developer, but you are free to spend more or less time on it based on your own abilities.
+// We ask that you do keep track of how much time you spend on it, as it will help us to gauge the quality of your submission.
 
 // Need to do
 // 5. Some properties in each opportunity object(e.g., opp name, rep’s name, PILYTIX score, etc.) are already in the table and should still be prominently displayed in the card as well.
