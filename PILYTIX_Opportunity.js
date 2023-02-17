@@ -242,4 +242,7 @@
 // 12. Consider adding new fonts and colors to the existing table as well as to the cards.
 // 13. Try for a cohesive vision between the way the table looks and the way your pop-up card looks.
 // 15. Bonus: Check your UI at various (but reasonable) screen sizes and style it to adjust properly.
+
 // (B) whether you have the design chops to find a way to make your work visually appealing.
+// We are especially focused on design as it is extremely important for this role since your responsibilities will somewhat overlap with those of a UI/UX designer. 
+// Any submission that simply provides bare-bones functionality without styling will be insufficient to advance to the next round.
