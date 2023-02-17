@@ -232,3 +232,4 @@
 
 // Need to do
 // 5. Some properties in each opportunity object(e.g., opp name, rep’s name, PILYTIX score, etc.) are already in the table and should still be prominently displayed in the card as well.
+// 11. Your secondary goal is all about UI/UX design: make the entire page (both the card you build and the provided table) look aesthetically pleasing and be intuitive and responsive to end users.
