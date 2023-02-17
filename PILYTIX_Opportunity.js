@@ -234,9 +234,12 @@
 
 // 14. Consider what happens when nested data elements are different lengths.
 
+// (A) have the development capabilities to build an intuitive UI for this type of nested data and
+
 // Need to do
 // 5. Some properties in each opportunity object(e.g., opp name, rep’s name, PILYTIX score, etc.) are already in the table and should still be prominently displayed in the card as well.
 // 11. Your secondary goal is all about UI/UX design: make the entire page (both the card you build and the provided table) look aesthetically pleasing and be intuitive and responsive to end users.
 // 12. Consider adding new fonts and colors to the existing table as well as to the cards.
 // 13. Try for a cohesive vision between the way the table looks and the way your pop-up card looks.
 // 15. Bonus: Check your UI at various (but reasonable) screen sizes and style it to adjust properly.
+// (B) whether you have the design chops to find a way to make your work visually appealing.
