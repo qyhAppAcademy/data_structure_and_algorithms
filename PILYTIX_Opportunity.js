@@ -250,3 +250,4 @@
 // Any submission that simply provides bare-bones functionality without styling will be insufficient to advance to the next round.
 
 // Minimum Submission Requirement
+// 1. You build your UI using React with a project built on our provided CodeSandbox template.
