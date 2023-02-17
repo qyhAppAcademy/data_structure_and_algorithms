@@ -230,6 +230,12 @@
 // 9. You must also build functionality that allows the user to close the card to return to the table to choose a new opportunity.
 // 10. Bonus: Enable the user to swap to successive or previous opportunity cards with the keyboard arrow keys or by hitting “Next” / “Previous” buttons.
 
+
+
+// 14. Consider what happens when nested data elements are different lengths.
+
 // Need to do
 // 5. Some properties in each opportunity object(e.g., opp name, rep’s name, PILYTIX score, etc.) are already in the table and should still be prominently displayed in the card as well.
 // 11. Your secondary goal is all about UI/UX design: make the entire page (both the card you build and the provided table) look aesthetically pleasing and be intuitive and responsive to end users.
+// 12. Consider adding new fonts and colors to the existing table as well as to the cards.
+// 13. Try for a cohesive vision between the way the table looks and the way your pop-up card looks.
