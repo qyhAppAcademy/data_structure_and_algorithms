@@ -291,3 +291,5 @@
 // Project Link: Pilytix Take Home Assignment - Qiao Yang Han
 
 // Total Work Time: 48 hrs (Timeline is included in the comments in App.js)
+
+// More screenshots are attached to this email.
