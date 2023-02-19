@@ -283,3 +283,6 @@
 // D3 is a powerful way to build fully - custom graphics for data, but unless you’re already familiar with it, it would not be recommended over the others that are easier to quickly implement out - of - the - box charts.
 
 // Dear Hendrik,
+
+// Thank you again for giving me a chance to showcase my skills.Here is my submission of the take home assignment.
+
