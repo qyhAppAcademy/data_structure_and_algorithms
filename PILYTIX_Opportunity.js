@@ -293,3 +293,5 @@
 // Total Work Time: 48 hrs (Timeline is included in the comments in App.js)
 
 // More screenshots are attached to this email.
+
+// A demo video is also attached to demonstrate the usage of a bar chart, a line chart, and sunburst chart.
