@@ -316,3 +316,5 @@
 // Total Work Time:  48 hrs
 // Name:        Qiao Yang Han
 // Email:       qyhwork@gmail.com
+
+// The work done on this take-home assignment is mine solely
