@@ -289,3 +289,5 @@
 // Example Screenshot:
 
 // Project Link: Pilytix Take Home Assignment - Qiao Yang Han
+
+// Total Work Time: 48 hrs (Timeline is included in the comments in App.js)
