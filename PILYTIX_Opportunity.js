@@ -312,3 +312,7 @@
 // 02/16/2023 6 hrs Improving display and refining code
 // 02/17/2023 6 hrs Making Material UI components responsive
 // 02/18/2023 6 hrs Making Bar/Line Chart and Sunburst Chart responsive
+
+// Total Work Time:  48 hrs
+// Name:        Qiao Yang Han
+// Email:       qyhwork@gmail.com
