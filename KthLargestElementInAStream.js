@@ -3,7 +3,11 @@
  * @param {number[]} nums
  */
 var KthLargest = function (k, nums) {
-
+    this.k = k;
+    this.minHeap = new MinHeap(nums);
+    while (this.minHeap.size() > k) {
+        this.minHeap.poll();
+    }
 };
 
 /** 
