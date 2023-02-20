@@ -15,7 +15,11 @@ var KthLargest = function (k, nums) {
  * @return {number}
  */
 KthLargest.prototype.add = function (val) {
-
+    this.minHeap.offer(val);
+    while(this.minHeap.size() > this.k) {
+        this.minHeap.poll();
+    }
+    return this.minHeap.peek();
 };
 
 /** 
