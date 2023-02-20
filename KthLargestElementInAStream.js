@@ -118,3 +118,6 @@ class MinHeap {
         return this.data.length;
     }
 }
+
+const obj = new KthLargest(3, [3, 6, 9, 12, 4, 13, 10]);
+console.log(obj);
