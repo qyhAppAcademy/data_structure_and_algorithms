@@ -1,5 +1,18 @@
 var kClosest = function (points, k) {
-
+    const maxHeap = new MaxHeap();
+    for (let point of points) {
+        let distance = Math.sqrt(point[0] ** 2 + point[1] ** 2);
+        if (maxHeap.size() < k) {
+            maxHeap.offer([distance, point]);
+        }
+        else {
+            if (distance < maxHeap.peek()[0]) {
+                maxHeap.poll();
+                maxHeap.offer([distance, point]);
+            }
+        }
+    }
+    return maxHeap.data.map(ele => ele[1]);
 };
 
 class MaxHeap {
