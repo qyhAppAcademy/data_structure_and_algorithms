@@ -1,5 +1,21 @@
 var topKFrequent = function (nums, k) {
-
+    const hashMap = {};
+    for (let num of nums) {
+        hashMap[num] = hashMap[num] ? hashMap[num] + 1 : 1;
+    }
+    const minHeap = new MinHeap();
+    for (let num of Object.keys(hashMap)) {
+        if (minHeap.size() < k) {
+            minHeap.offer([hashMap[num], num]);
+        }
+        else {
+            if (hashMap[num] > minHeap.peek()[0]) {
+                minHeap.poll();
+                minHeap.offer([hashMap[num], num]);
+            }
+        }
+    }
+    return minHeap.data.map(datum => datum[1]);
 };
 
 class MinHeap {
