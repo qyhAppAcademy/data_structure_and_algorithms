@@ -1,5 +1,32 @@
 var reorganizeString = function (s) {
-    
+    const hashMap = {};
+    const maxHeap = new MaxHeap();
+    for (let i = 0; i < s.length; i++) {
+        if (hashMap[s[i]] === undefined) {
+            hashMap[s[i]] = 1;
+            maxHeap.offer(s[i]);
+        }
+        else {
+            hashMap[s[i]] += 1;
+        }
+    }
+    let result = "";
+    let prev = undefined;
+    while (maxHeap.size() > 0) {
+        let current = maxHeap.poll();
+        result += current;
+        if (hashMap[current] - 1 === 0) {
+            delete hashMap[current];
+        }
+        else {
+            hashMap[current] -= 1;
+        };
+        if (prev) {
+            maxHeap.offer(prev);
+        }
+        prev = hashMap[current] ? current : undefined;
+    }
+    return Object.values(hashMap).length === 0 ? result : "";
 };
 
 class MaxHeap {
