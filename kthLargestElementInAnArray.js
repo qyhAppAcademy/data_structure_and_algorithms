@@ -1,4 +1,18 @@
-
+var findKthLargest = function (nums, k) {
+    const minHeap = new MinHeap();
+    for (let num of nums) {
+        if (minHeap.size() < k) {
+            minHeap.offer([num]);
+        }
+        else {
+            if (minHeap.peek()[0] < num) {
+                minHeap.poll();
+                minHeap.offer([num]);
+            }
+        }
+    }
+    return minHeap.peek()[0];
+};
 
 class MinHeap {
     constructor(data = new Array()) {
