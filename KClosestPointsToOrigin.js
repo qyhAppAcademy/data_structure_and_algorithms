@@ -1,3 +1,7 @@
+var kClosest = function (points, k) {
+
+};
+
 class MaxHeap {
     constructor(data = new Array()) {
         this.data = data;
