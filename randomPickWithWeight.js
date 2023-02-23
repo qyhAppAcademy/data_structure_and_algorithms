@@ -11,17 +11,17 @@ var Solution = function (w) {
  * @return {number}
  */
 Solution.prototype.pickIndex = function () {
-    let randomNum = Math.random() * this.line[this.line.length - 1];
     let start = 0;
-    let end = this.length - 1;
+    let end = this.line.length - 1;
+    let randomNum = Math.random() * this.line[end];
     while (start < end) {
         let mid = Math.floor((start + end) / 2.0);
-        if (randomNum <= this.line[mid]) {
-            return mid;
+        if (randomNum < this.line[mid]) {
+            end = mid;
         }
         else {
-            start = mid;
+            start = mid + 1;
         }
     }
-    return this.line.length - 1;
+    return start;
 };
