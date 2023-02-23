@@ -22,15 +22,37 @@ var findClosestElements = function (arr, k, x) {
     let result = [];
     let count = 0;
     while (count < k) {
-        if (left >= 0) {
+        if (left >= 0 && right < arr.length) {
+            let small = Math.abs(arr[left] - x) <= Math.abs(arr[right] - x) ? left : right;
+            if (small === left) {
+                result.unshift(arr[left]);
+                left -= 1;
+                count += 1;
+                if (count === k) {
+                    break;
+                }
+                result.push(arr[right]);
+                right += 1;
+                count += 1;
+            }
+            else {
+                result.push(arr[right]);
+                right += 1;
+                count += 1;
+                if (count === k) {
+                    break;
+                }
+                result.unshift(arr[left]);
+                left -= 1;
+                count += 1;
+            }
+        }
+        else if (left >= 0) {
             result.unshift(arr[left]);
             left -= 1;
             count += 1;
         }
-        if (count === k) {
-            break;
-        }
-        if (right < arr.length) {
+        else {
             result.push(arr[right]);
             right += 1;
             count += 1;
