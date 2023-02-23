@@ -20,5 +20,5 @@ var singleNonDuplicate = function (nums) {
             }
         }
     }
-    return low;
+    return nums[low];
 };
