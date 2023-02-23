@@ -2,12 +2,15 @@ var findClosestElements = function (arr, k, x) {
     if (arr.length === k) {
         return arr;
     }
+
     let low = 0;
     let high = arr.length - 1;
-    while (low < high) {
+    let found = undefined;
+
+    while (low <= high) {
         let mid = Math.floor((low + high) / 2.0);
         if (arr[mid] === x) {
-            low = mid;
+            found = mid;
             break;
         }
         else if (arr[mid] < x) {
@@ -17,46 +20,33 @@ var findClosestElements = function (arr, k, x) {
             high = mid - 1;
         }
     }
-    let left = low - 1;
-    let right = low;
+    found = found !== undefined ? found : high;
+
     let result = [];
     let count = 0;
-    while (count < k) {
-        if (left >= 0 && right < arr.length) {
-            let small = Math.abs(arr[left] - x) <= Math.abs(arr[right] - x) ? left : right;
-            if (small === left) {
-                result.unshift(arr[left]);
-                left -= 1;
-                count += 1;
-                if (count === k) {
-                    break;
-                }
-                result.push(arr[right]);
-                right += 1;
-                count += 1;
-            }
-            else {
-                result.push(arr[right]);
-                right += 1;
-                count += 1;
-                if (count === k) {
-                    break;
-                }
-                result.unshift(arr[left]);
-                left -= 1;
-                count += 1;
-            }
+
+    let left = found;
+    let right = found + 1 < arr.length ? found + 1 : undefined;
+
+    while (count < k && (left !== undefined || right !== undefined)) {
+        let small;
+        if (left !== undefined && right !== undefined) {
+            small = Math.abs(arr[left] - x) <= Math.abs(arr[right] - x) ? left : right;
         }
-        else if (left >= 0) {
+        else {
+            small = left !== undefined ? left : right;
+        }
+        if (small === left) {
             result.unshift(arr[left]);
-            left -= 1;
+            left = left - 1 >= 0 ? left - 1 : undefined;
             count += 1;
         }
         else {
             result.push(arr[right]);
-            right += 1;
+            right = right + 1 < arr.length ? right + 1 : undefined;
             count += 1;
         }
     }
+
     return result;
 };
