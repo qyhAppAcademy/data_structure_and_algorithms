@@ -3,13 +3,13 @@ var search = function (nums, target) {
     let end = nums.length - 1;
     while (start <= end) {
         let mid = Math.floor((start + end) / 2.0);
+        console.log(nums[mid]);
         if (nums[mid] === target) {
             return true;
         }
 
         if (nums[start] === nums[end]) {
             start += 1;
-            end -= 1;
             continue;
         }
 
@@ -22,7 +22,7 @@ var search = function (nums, target) {
             }
         }
         else {
-            if (nums[mid] < target && target <= nums[end]) {
+            if (nums[mid + 1] <= target && target <= nums[end]) {
                 start = mid + 1;
             }
             else {
