@@ -7,12 +7,13 @@ var search = function (nums, target) {
             return true;
         }
 
-        if (nums[start] === nums[end]) {
+        if (nums[start] === nums[mid] && nums[mid] === nums[end]) {
+            start += 1;
             end -= 1;
             continue;
         }
 
-        if (nums[start] < nums[mid]) {
+        if (nums[start] <= nums[mid]) {
             if (nums[start] <= target && target < nums[mid]) {
                 end = mid - 1;
             }
@@ -21,11 +22,11 @@ var search = function (nums, target) {
             }
         }
         else {
-            if (nums[end] < target || target < nums[mid] || target == nums[start]) {
-                end = mid - 1;
+            if (nums[mid] < target && target <= nums[end]) {
+                start = mid + 1;
             }
             else {
-                start = mid + 1;
+                end = mid - 1;
             }
         }
     }
