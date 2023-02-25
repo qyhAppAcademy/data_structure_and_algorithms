@@ -1,27 +1,36 @@
-var permute = function (nums) {
-    const result = [];
-    permutation(nums, 0, result);
-    return result;
+var letterCombinations = function (digits) {
+    if (digits.length === 0) {
+        return [];
+    }
+    const letters = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
+    const result = new Set();
+    lc(letters, digits, [], 0, result);
+    return Array.from(result);
 };
 
-const permutation = (nums, currentIndex, result) => {
-    if (currentIndex === nums.length - 1) {
-        const arr = [];
-        for (let num of nums) {
-            arr.push(num);
-        }
-        result.push(arr);
-        return;
+const lc = (letters, digits, combo, currentIndex, result) => {
+    if (currentIndex === digits.length) {
+        result.add(combo.join(""));
+        return result;
     }
-    for (let i = currentIndex; i < nums.length; i++) {
-        swapIndex(nums, currentIndex, i);
-        permutation(nums, currentIndex + 1, result);
-        swapIndex(nums, i, currentIndex);
+
+    for (let index = currentIndex; index < digits.length; index++) {
+        swapIndex(digits, currentIndex, index);
+
+        let digit = parseInt(digits[currentIndex]);
+        for (let i = 0; i < letters[digit].length; i++) {
+            let letter = letters[digit][i];
+            combo.push(letter);
+            lc(letters, digits, combo, currentIndex + 1, result);
+            combo.pop();
+        }
+
+        swapIndex(digits, currentIndex, index);
     }
 }
 
-const swapIndex = (nums, i, j) => {
-    let temp = nums[i];
-    nums[i] = nums[j];
-    nums[j] = temp;
+const swapIndex = (digits, currentIndex, index) => {
+    let temp = digits[currentIndex];
+    digits[currentIndex] = digits[index];
+    digits[index] = temp;
 }
