@@ -1,10 +1,4 @@
 var canCompleteCircuit = function (gas, cost) {
-    let sumGas = 0;
-    let sumCost = 0;
-    for (let i = 0; i < gas.length; i++) {
-        sumGas += gas[i];
-        sumCost += cost[i];
-    }
     if (sumGas < sumCost) {
         return -1;
     }
