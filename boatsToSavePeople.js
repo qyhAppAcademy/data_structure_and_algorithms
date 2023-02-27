@@ -1,5 +1,5 @@
 var numRescueBoats = function (people, limit) {
-    people.sort();
+    people.sort((a, b) => a - b);
     let light = 0;
     let heavy = people.length - 1;
     let count = 0;
