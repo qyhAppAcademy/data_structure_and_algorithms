@@ -9,9 +9,9 @@ const canJumpRec = (nums, currentIndex) => {
     if (currentIndex === 0) {
         return true;
     }
-    for (let step = nums[currentIndex - 1]; step > 0; step--) {
-        if (canJumpRec(nums, currentIndex - step)) {
-            return true;
+    for (let step = 1; step <= currentIndex; step++) {
+        if (nums[currentIndex - step] >= step) {
+            return canJumpRec(nums, currentIndex - step);
         }
     }
     return false;
