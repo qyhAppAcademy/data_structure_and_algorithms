@@ -9,7 +9,7 @@ var jump = function (nums) {
     while (!reached) {
         let range = 0;
         for (let i = idx + 1; i <= idx + steps; i++) {
-            if (i === nums.length) {
+            if (i === nums.length - 1) {
                 reached = true;
                 break;
             }
