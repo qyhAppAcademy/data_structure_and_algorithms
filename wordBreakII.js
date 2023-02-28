@@ -23,7 +23,6 @@ const helper = (s, dict, result) => {
 
         if (word.length === s.length) {
             res.push(word);
-            break;
         }
         else {
             const resultsOfSubstr = helper(s.substring(word.length), dict, result);
