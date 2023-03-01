@@ -34,3 +34,30 @@ const helper = (s, dict, result) => {
     result[s] = res;
     return res;
 }
+
+var wordBreak = function (s, wordDict) {
+    // const result = {};
+    // helper(s, new Set(wordDict), result);
+    // return result[s];
+    const dp = new Array(s.length + 1);
+    for (let j = 1; j <= s.length; j++) {
+        let res = [];
+        let i = j - 1;
+        while (i >= 0) {
+            const substr = s.substring(i, j);
+            if (wordDict.includes(substr)) {
+                if (i > 0 && dp[i]) {
+                    for (let sentence of dp[i]) {
+                        res.push(sentence + " " + substr);
+                    }
+                }
+                else {
+                    res.push(substr);
+                }
+            }
+            i -= 1;
+        }
+        dp[j] = res;
+    }
+    return dp[s.length];
+};
