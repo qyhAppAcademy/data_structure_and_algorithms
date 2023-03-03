@@ -1,0 +1,2 @@
+var findDuplicate = function (nums) {
+};
