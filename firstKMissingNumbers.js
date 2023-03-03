@@ -1,4 +1,4 @@
-export function firstKMissingNumbers(arr, k) {
+export function firstKMissingNumbers(arr, k){
     // your code will replace this placeholder return statement
     for (let i = 0; i < arr.length; i++) {
         while (arr[i] > 0 && arr[i] - 1 !== i && arr[arr[i] - 1] !== arr[i]) {
@@ -8,16 +8,24 @@ export function firstKMissingNumbers(arr, k) {
         }
     }
     const result = [];
+    let last = 0;
     let count = 0;
-    console.log(arr);
-    for (let i = 1; i <= arr.length; i++) {
-        for (let j = (arr[i - 1] < 0 ? 1 : arr[i - 1] + 1); j < (i === arr.length ? arr[i - 1] + k + 1 : arr[i]); j++) {
-            result.push(j);
-            count += 1;
-            if (count === k) {
-                return result;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] - 1 === i) {
+            for (let j = last + 1; j <= arr[i] - 1; j++) {
+                result.push(j);
+                count += 1;
+                if (count === k) {
+                    return result;
+                }
             }
+            last = arr[i];
         }
+    }
+    while (count < k) {
+        result.push(last + 1);
+        count += 1;
+        last += 1;
     }
     return result;
 }
