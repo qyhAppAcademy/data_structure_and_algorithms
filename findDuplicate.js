@@ -6,6 +6,10 @@ var findDuplicate = function (nums) {
             nums[i] = tmp;
         }
     }
-
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] - 1 !== i) {
+            return nums[i];
+        }
+    }
     return nums.length + 1;
 };
