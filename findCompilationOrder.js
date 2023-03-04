@@ -68,3 +68,5 @@ const findCompilationOrder = (dependencies) => {
     }
     return sortedOrder;
 }
+
+findCompilationOrder([["B", "A"], ["C", "A"], ["D", "C"], ["E", "D"], ["E", "B"]]);
