@@ -59,14 +59,17 @@ const findCompilationOrder = (dependencies) => {
     while (sources.length !== 0) {
         let source = sources.dequeue();
         sortedOrder.push(source);
-        for (let child of graph[source]) {
-            inDegrees[child] -= 1;
-            if (inDegrees[child] === 0) {
-                sources.enqueue(child);
+        if (graph[source] !== undefined) {
+            for (let child of graph[source]) {
+                inDegrees[child] -= 1;
+                if (inDegrees[child] === 0) {
+                    sources.enqueue(child);
+                }
             }
         }
     }
     return sortedOrder;
 }
 
-findCompilationOrder([["B", "A"], ["C", "A"], ["D", "C"], ["E", "D"], ["E", "B"]]);
+const result = findCompilationOrder([["B", "A"], ["C", "A"], ["D", "C"], ["E", "D"], ["E", "B"]]);
+console.log(result);
