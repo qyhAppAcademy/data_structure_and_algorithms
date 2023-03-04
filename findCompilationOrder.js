@@ -47,4 +47,24 @@ const findCompilationOrder = (dependencies) => {
     if (Object.keys(graph).length === 0) {
         return [];
     }
+
+    let sources = new Queue();
+    Object.keys(graph).forEach(vertex => {
+        if (inDegrees[vertex] === 0) {
+            sources.enqueue(vertex);
+        }
+    });
+
+    let sortedOrder = [];
+    while (sources.length !== 0) {
+        let source = sources.dequeue();
+        sortedOrder.push(source);
+        for (let child of graph[source]) {
+            inDegrees[child] -= 1;
+            if (inDegrees[child] === 0) {
+                sources.enqueue(child);
+            }
+        }
+    }
+    return sortedOrder;
 }
