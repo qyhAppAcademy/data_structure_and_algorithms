@@ -1,3 +1,3 @@
-const findCompilationOrder = () => {
+const findCompilationOrder = (dependencies) => {
     
 }
