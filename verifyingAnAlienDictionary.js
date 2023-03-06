@@ -10,14 +10,15 @@ var isAlienSorted = function (words, order) {
         let wordA = words[i - 1];
         let wordB = words[i];
         let j = 0
-        while (wordA[j] === wordB[j] && Math.min(wordA.length, wordB.length))
-            if (wordA[j] !== wordB[j] && hashMap[wordA[j]] > hashMap[wordB[j]]) {
-                return false;
-            }
+        while (wordA[j] === wordB[j] && j < Math.min(wordA.length, wordB.length)) {
+            j += 1;
+        }
+        if (j < Math.min(wordA.length, wordB.length) && hashMap[wordA[j]] > hashMap[wordB[j]]) {
+            return false;
+        }
+        if (j === Math.min(wordA.length, wordB.length) && wordA.length > wordB.length) {
+            return false;
+        }
     }
-    if (j === Math.min(wordA.length, wordB.length) && wordB.length < wordA.length) {
-        return false;
-    }
-}
-return true;
+    return true;
 };
