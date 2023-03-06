@@ -26,23 +26,19 @@ class Queue2 {
 }
 
 var canFinish = function (numCourses, prerequisites) {
+    if (prerequisites.length === 0) {
+        return true;
+    }
     const graph = {};
     const inDegrees = {};
+    for (let i = 0; i < numCourses; i++) {
+        graph[i] = [];
+        inDegrees[i] = 0;
+    }
     for (let pre of prerequisites) {
         let parent = pre[1];
         let child = pre[0];
-
-        if (graph[parent] === undefined) {
-            graph[parent] = [];
-        }
         graph[parent].push(child);
-
-        if (inDegrees[parent] === undefined) {
-            inDegrees[parent] = 0;
-        }
-        if (inDegrees[child] === undefined) {
-            inDegrees[child] = 0;
-        }
         inDegrees[child] += 1;
     }
     let count = 0;
@@ -55,12 +51,10 @@ var canFinish = function (numCourses, prerequisites) {
     while (sources.length !== 0) {
         const source = sources.dequeue();
         count += 1;
-        if (graph[source] !== undefined) {
-            for (let child of graph[source]) {
-                inDegrees[child] -= 1;
-                if (inDegrees[child] === 0) {
-                    sources.enqueue(child);
-                }
+        for (let child of graph[source]) {
+            inDegrees[child] -= 1;
+            if (inDegrees[child] === 0) {
+                sources.enqueue(child);
             }
         }
     }
