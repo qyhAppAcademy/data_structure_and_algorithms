@@ -12,7 +12,7 @@ var minRemoveToMakeValid = function (s) {
     }
     let result = "";
     for (let i = 0; i < s.length; i++) {
-        if (s[stack[0]] === s[i]) {
+        if (stack[0] === i) {
             stack.shift();
         }
         else {
