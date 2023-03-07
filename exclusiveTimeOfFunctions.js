@@ -4,6 +4,10 @@ var exclusiveTime = function (n, logs) {
     for (let i = 1; i < logs.length; i++) {
         let [id, status, time] = logs[i].split(":");
         let top = stack[stack.length - 1];
+        if (top === undefined) {
+            stack.push([id, status, time]);
+            continue;
+        }
         if (id === top[0]) {
             if (status === "end") {
                 result[id] += time - top[2] + 1;
