@@ -1,0 +1,3 @@
+var diameterOfBinaryTree = function (root) {
+
+};
