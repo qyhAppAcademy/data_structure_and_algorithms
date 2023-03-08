@@ -1,0 +1,3 @@
+var flatten = function (root) {
+
+};
