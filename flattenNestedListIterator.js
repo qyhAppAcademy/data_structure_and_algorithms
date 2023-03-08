@@ -32,6 +32,7 @@ var NestedIterator = function (nestedList) {
     this.data = nestedList;
     this.stack = [];
     this.idx = 0;
+    this.localIdx = 0;
 };
 
 
@@ -40,9 +41,29 @@ var NestedIterator = function (nestedList) {
  * @returns {boolean}
  */
 NestedIterator.prototype.hasNext = function () {
-    if (this.stack.length === 0 && this.idx <= this.data.length) {
-
+    while (this.idx < this.data.length) {
+        if (this.data[this.idx].isInteger()) {
+            return true;
+        }
+        this.stack.push(this.data[this.idx]);
+        while (this.stack.length > 0) {
+            let top = this.stack[this.stack.length - 1].getList();
+            console.log(top);
+            console.log(top.length === 0);
+            if (top.length === 0) {
+                this.stack.pop();
+            }
+            else if (top[0].isInteger()) {
+                return true;
+            }
+            else {
+                let newTop = top.shift();
+                this.stack.push(newTop);
+            }
+        }
+        this.idx += 1;
     }
+    return false;
 };
 
 /**
@@ -50,7 +71,22 @@ NestedIterator.prototype.hasNext = function () {
  * @returns {integer}
  */
 NestedIterator.prototype.next = function () {
-
+    if (this.data[this.idx].isInteger()) {
+        let tmp = this.idx;
+        this.idx += 1;
+        return this.data[tmp].getInteger();
+    }
+    else {
+        let top = this.stack[this.stack.length - 1].getList();
+        let ele = top.shift();
+        if (top.length === 0) {
+            this.stack.pop();
+        }
+        if (this.stack.length === 0) {
+            this.idx += 1;
+        }
+        return ele.getInteger();
+    }
 };
 
 /**
