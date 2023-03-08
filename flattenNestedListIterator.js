@@ -45,11 +45,11 @@ NestedIterator.prototype.hasNext = function () {
         if (this.data[this.idx].isInteger()) {
             return true;
         }
-        this.stack.push(this.data[this.idx]);
+        if (this.stack.length === 0) {
+            this.stack.push(this.data[this.idx]);
+        }
         while (this.stack.length > 0) {
             let top = this.stack[this.stack.length - 1].getList();
-            console.log(top);
-            console.log(top.length === 0);
             if (top.length === 0) {
                 this.stack.pop();
             }
