@@ -1,35 +1,15 @@
 var diameterOfBinaryTree = function (root) {
+    const d = [0];
+    helper(root, d);
+    return d[0];
+};
+
+const helper = (root, d) => {
     if (!root) {
         return 0;
     }
-    let stack;
-    let maxLeft = 0;
-    if (root.left) {
-        stack = [[root.left, 1]];
-        while (stack.length > 0) {
-            const [top, depth] = stack.pop();
-            maxLeft = Math.max(maxLeft, depth);
-            if (top.right) {
-                stack.push([top.right, depth + 1]);
-            }
-            if (top.left) {
-                stack.push([top.left, depth + 1]);
-            }
-        }
-    }
-    let maxRight = 0;
-    if (root.right) {
-        stack = [[root.right, 1]];
-        while (stack.length > 0) {
-            const [top, depth] = stack.pop();
-            maxRight = Math.max(maxRight, depth);
-            if (top.right) {
-                stack.push([top.right, depth + 1]);
-            }
-            if (top.left) {
-                stack.push([top.left, depth + 1]);
-            }
-        }
-    }
-    return maxLeft + maxRight;
-};
+    let lh = helper(root.left, d);
+    let rh = helper(root.right, d);
+    d[0] = Math.max(d[0], lh + rh);
+    return Math.max(lh, rh) + 1;
+}
