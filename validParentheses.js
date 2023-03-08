@@ -22,6 +22,30 @@
 //     return true;
 // }
 
-
+var isValid = function (s) {
+    const stack = [];
+    const open = ["(", "{", "["];
+    const closed = [")", "}", "]"];
+    for (let i = 0; i < s.length; i++) {
+        if (open.includes(s[i])) {
+            if (stack.length === 0 ||
+                open.indexOf(stack[stack.length - 1]) <= open.indexOf(s[i])) {
+                stack.push(s[i]);
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            if (stack.length > 0 && open.indexOf(stack[stack.length - 1]) === closed.indexOf(s[i])) {
+                stack.pop();
+            }
+            else {
+                return false;
+            }
+        }
+    }
+    return stack.length === 0;
+};
 
 console.log(isValid("{{{}}}"));
