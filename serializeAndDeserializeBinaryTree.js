@@ -18,15 +18,15 @@ var serialize = function (root) {
     return result;
 };
 
-// const serializeHelper = (root, result) => {
-//     if (!root) {
-//         result.push(null);
-//         return;
-//     }
-//     result.push(root.val);
-//     serializeHelper(root.left, result);
-//     serializeHelper(root.right, result);
-// }
+const serializeHelper = (root, result) => {
+    if (!root) {
+        result.push(null);
+        return;
+    }
+    result.push(root.val);
+    serializeHelper(root.left, result);
+    serializeHelper(root.right, result);
+}
 
 /**
  * Decodes your encoded data to tree.
