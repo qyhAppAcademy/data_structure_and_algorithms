@@ -35,10 +35,10 @@ const serializeHelper = (root, result) => {
  * @return {TreeNode}
  */
 var deserialize = function (data) {
-    // if (data.length === 0) {
-    //     return null;
-    // }
-    // return deserializeHelper(data);
+    if (data.length === 0) {
+        return null;
+    }
+    return deserializeHelper(data);
 };
 
 // const deserializeHelper = (data) => {
