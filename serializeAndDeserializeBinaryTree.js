@@ -41,19 +41,19 @@ var deserialize = function (data) {
     return deserializeHelper(data);
 };
 
-// const deserializeHelper = (data) => {
-//     if (data.length === 0) {
-//         return null;
-//     }
-//     let datum = data.shift();
-//     if (datum === null) {
-//         return null;
-//     }
-//     const node = new TreeNode(datum);
-//     node.left = deserializeHelper(data);
-//     node.right = deserializeHelper(data);
-//     return node;
-// }
+const deserializeHelper = (data) => {
+    if (data.length === 0) {
+        return null;
+    }
+    let datum = data.shift();
+    if (datum === null) {
+        return null;
+    }
+    const node = new TreeNode(datum);
+    node.left = deserializeHelper(data);
+    node.right = deserializeHelper(data);
+    return node;
+}
 
 /**
  * Your functions will be called as such:
