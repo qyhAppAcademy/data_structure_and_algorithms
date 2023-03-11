@@ -42,3 +42,7 @@ Trie.prototype.search = function (word) {
     }
     return node.word === undefined ? word : node.word;
 };
+
+var replaceWords = function (dictionary, sentence) {
+
+};
