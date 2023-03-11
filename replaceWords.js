@@ -44,5 +44,13 @@ Trie.prototype.search = function (word) {
 };
 
 var replaceWords = function (dictionary, sentence) {
-
+    const trie = new Trie();
+    for (let word of dictionary) {
+        trie.insert(word);
+    }
+    const result = [];
+    for (let word of sentence.split(" ")) {
+        result.push(trie.search(word));
+    }
+    return result.join(" ");
 };
