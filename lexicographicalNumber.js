@@ -32,3 +32,13 @@ var dfs = function (node, result, num = 0) {
         dfs(node.children[child], result, newNum);
     }
 }
+
+var lexicalOrder = function (n) {
+    const trie = new Trie();
+    for (let i = 1; i <= n; i++) {
+        trie.insert(i);
+    }
+    const result = [];
+    dfs(trie.root, result);
+    return result;
+};
