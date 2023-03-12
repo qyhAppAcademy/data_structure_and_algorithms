@@ -21,3 +21,14 @@ Trie.prototype.insert = function (num) {
         node = node.children[n];
     }
 };
+
+var dfs = function (node, result, num = 0) {
+    if (Object.keys(node.children).length === 0) {
+        return;
+    }
+    for (let child of Object.keys(node.children)) {
+        let newNum = num * 10 + parseInt(child);
+        result.push(newNum);
+        dfs(node.children[child], result, newNum);
+    }
+}
