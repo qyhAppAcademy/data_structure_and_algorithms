@@ -1,0 +1,3 @@
+var middleNode = function (head) {
+
+};
