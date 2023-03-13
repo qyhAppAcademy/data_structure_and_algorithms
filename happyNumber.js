@@ -15,5 +15,8 @@ var isHappy = function (n) {
 };
 
 var helper = function (n) {
-
+    const nums = n.toString().split("");
+    return nums.reduce((acc, ele) => {
+        return acc + parseInt(ele) ** 2;
+    }, 0);
 }
