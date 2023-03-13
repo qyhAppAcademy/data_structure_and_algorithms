@@ -13,3 +13,7 @@ var isHappy = function (n) {
     }
     return false;
 };
+
+var helper = function (n) {
+
+}
