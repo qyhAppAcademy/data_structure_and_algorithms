@@ -1,24 +1,48 @@
 var circularArrayLoop = function (nums) {
-    if (nums.length <= 1) {
-        return false;
-    }
     let len = nums.length;
-    let slow = nums[0];
-    let fast = mod(slow + nums[slow], len);
-    while (slow < nums.length) {
-        let newSlow = mod(slow + nums[slow], len);
-        let newFast = mod(fast + nums[fast], len);
-        if (slow === newSlow || fast === newFast) {
-            slow += 1;
-            slow = mod(slow + nums[slow], len);
-            fast = mod(slow + nums[slow], len);
+    for (let i = 0; i < nums.length; i++) {
+        let isPositive = nums[i] > 0 ? true : false;
+        let slow = mod(i + nums[i], len);
+        if (i === slow) {
+            continue;
+        }
+        let fast;
+        if (nums[slow] > 0 === isPositive) {
+            fast = slow + nums[slow];
         }
         else {
-            slow = newSlow;
-            fast = mod(newFast + nums[newFast], len);
-            if (slow === fast) {
-                return true;
+            continue;
+        }
+        let found = true;
+        while (slow !== fast) {
+            if (nums[slow] > 0 === isPositive) {
+                slow = mod(slow + nums[slow], len);
+                if (i === slow) {
+                    found = false;
+                    break;
+                }
+                if (nums[fast] > 0 === isPositive) {
+                    let tmp = mod(fast + nums[fast], len);
+                    if (nums[tmp] > 0 === isPositive) {
+                        fast = mod(tmp + nums[tmp], len);
+                    }
+                    else {
+                        found = false;
+                        break;
+                    }
+                }
+                else {
+                    found = false;
+                    break;
+                }
             }
+            else {
+                found = false;
+                break;
+            }
+        }
+        if (found) {
+            return true;
         }
     }
     return false;
