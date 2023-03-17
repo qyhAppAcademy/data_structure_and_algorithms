@@ -14,4 +14,45 @@ var calcEquation = function (equations, values, queries) {
 };
 
 class UnionFind {
+    constructor(equations, values) {
+        this.parent = {};
+        this.weight = {};
+        for (let i = 0; i < equations.length; i++) {
+            let [x, y] = equations[i];
+            let val = values[i];
+            if (this.parent[x] === undefined && this.parent[y] === undefined) {
+                this.parent[x] = y;
+                this.weight[x] = val;
+                this.parent[y] = y;
+                this.weight[y] = 1;
+            }
+            else if (this.parent[x] === undefined) {
+                this.parent[x] = y;
+                this.weight[x] = val;
+            }
+            else if (this.parent[y] === undefined) {
+                this.parent[y] = x;
+                this.weight[y] = 1 / val;
+            }
+            else {
+                this.union(x, y, val);
+            }
+        }
+    }
+
+    find(v) {
+        if (this.parent[v] != v) {
+            const p = this.find(this.parent[v]);
+            this.weight[v] *= this.weight[this.parent[v]];
+            this.parent[v] = p;
+        }
+        return this.parent[v];
+    }
+
+    union(v1, v2, val) {
+        let p1 = this.find(v1);
+        let p2 = this.find(v2);
+        this.weight[p1] = this.weight[v2] * val / this.weight[v1];
+        this.parent[p1] = p2;
+    }
 }
