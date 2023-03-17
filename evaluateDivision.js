@@ -12,3 +12,6 @@ var calcEquation = function (equations, values, queries) {
     }
     return result;
 };
+
+class UnionFind {
+}
