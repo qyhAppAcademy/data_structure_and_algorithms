@@ -19,3 +19,7 @@ class UnionFind {
         this.parent[p2] = p1;
     }
 }
+
+var latestDayToCross = function (row, col, cells) {
+
+};
