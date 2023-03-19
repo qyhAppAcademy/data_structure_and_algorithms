@@ -1,0 +1,2 @@
+var bitwiseComplement = function (num) {
+};
