@@ -17,7 +17,9 @@ class SnapshotArray {
     // This function takes no parameters and returns the snapID.
     // snapID is the number of times that the snapshot() function was called minus 1.
     snapshot() {
-
+        this.snapID += 1;
+        this.nodeValue[this.snapID] = { ...this.nodeValue[this.snapID - 1] };
+        return this.snapID - 1;
     }
 
     // Function getValue returns the value at the index idx with the given snapID.
