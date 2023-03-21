@@ -24,6 +24,13 @@ class SnapshotArray {
 
     // Function getValue returns the value at the index idx with the given snapID.
     getValue(idx, snapID) {
-
+        if (snapID < this.snapID && snapID >= 0 && idx < this.ncount) {
+            if (idx in this.nodeValue[snapID]) {
+                return this.nodeValue[snapID][idx];
+            }
+            return 0;
+        } else {
+            return null;
+        }
     }
 }
