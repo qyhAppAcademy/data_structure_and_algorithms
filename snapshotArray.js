@@ -1,7 +1,10 @@
 class SnapshotArray {
     // Constructor
     constructor(length) {
-
+        this.snapID = 0;
+        this.nodeValue = {};
+        this.nodeValue[0] = {};
+        this.ncount = length;
     }
 
     // Function setValue sets the value at a given index idx to val.
