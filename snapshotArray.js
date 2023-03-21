@@ -9,7 +9,9 @@ class SnapshotArray {
 
     // Function setValue sets the value at a given index idx to val.
     setValue(idx, val) {
-
+        if (idx < this.ncount) {
+            this.nodeValue[this.snapID][idx] = val;
+        }
     }
 
     // This function takes no parameters and returns the snapID.
