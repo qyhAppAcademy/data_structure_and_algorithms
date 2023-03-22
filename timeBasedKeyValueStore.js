@@ -1,3 +1,4 @@
+let keyTimeMap = {};
 var TimeMap = function () {
 };
 
