@@ -51,4 +51,5 @@ RandomizedSet.prototype.remove = function (val) {
  * @return {number}
  */
 RandomizedSet.prototype.getRandom = function () {
+    return this.store[Math.floor(Math.random() * this.store.length)];
 };
