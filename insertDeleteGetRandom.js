@@ -1,5 +1,6 @@
 var RandomizedSet = function () {
-
+    this.indexor = {};
+    this.store = [];
 };
 
 /** 
