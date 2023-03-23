@@ -1,6 +1,6 @@
 var RandomizedSet = function () {
-    this.indexor = {}; // maps actual value to its index
-    this.store = []; // store actual values in an array
+    this.indexor = {};
+    this.store = [];
 };
 
 /** 
