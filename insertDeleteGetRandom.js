@@ -26,20 +26,13 @@ RandomizedSet.prototype.insert = function (val) {
  * @return {boolean}
  */
 RandomizedSet.prototype.remove = function (val) {
-    //Removes a value from the data structure.
-    //Returns True if it contained the specified element.
-
     if (val in this.indexor) {
-        // swap the last element in the array with the element
-        // to delete, update the location of the moved element
-        // in its entry in the hash map
-
         let last = this.store[this.store.length - 1],
             i = this.indexor[val];
 
         this.store[i] = last;
         this.indexor[last] = i;
-        // delete the last element
+
         delete this.indexor[val];
         this.store.pop();
         return true;
