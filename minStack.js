@@ -57,5 +57,5 @@ MinStack.prototype.pop = function () {
 };
 
 MinStack.prototype.top = function () {
-
+    return this.mainStack.top();
 };
