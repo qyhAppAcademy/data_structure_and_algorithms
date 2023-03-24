@@ -29,3 +29,7 @@ class MainStack {
         return this.stackList.pop();
     }
 }
+
+var MinStack = function () {
+    
+};
