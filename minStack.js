@@ -31,5 +31,10 @@ class MainStack {
 }
 
 var MinStack = function () {
-    
+    this.minStack = new MainStack();
+    this.mainStack = new MainStack();
+};
+
+MinStack.prototype.push = function (val) {
+
 };
