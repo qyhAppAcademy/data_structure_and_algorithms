@@ -59,3 +59,7 @@ MinStack.prototype.pop = function () {
 MinStack.prototype.top = function () {
     return this.mainStack.top();
 };
+
+MinStack.prototype.getMin = function () {
+
+};
