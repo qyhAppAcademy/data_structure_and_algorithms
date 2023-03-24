@@ -51,5 +51,7 @@ MinStack.prototype.push = function (val) {
 };
 
 MinStack.prototype.pop = function () {
-
+    this.minStack.pop();
+    // Returns the popped value from mainStack
+    return this.mainStack.pop();
 };
