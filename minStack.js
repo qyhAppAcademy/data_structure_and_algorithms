@@ -36,5 +36,16 @@ var MinStack = function () {
 };
 
 MinStack.prototype.push = function (val) {
+    let value = val;
+    this.mainStack.push(value);
 
+    // If the minStack is empty, or the value being pushed is less than
+    // the minimum (top) value of minStack
+    if (this.minStack.isEmpty() || value < this.minStack.top()) {
+        // Push this new value to the minStack
+        this.minStack.push(value);
+    } else {
+        // Keep the minimum value at the top of minStack
+        this.minStack.push(this.minStack.top());
+    }
 };
