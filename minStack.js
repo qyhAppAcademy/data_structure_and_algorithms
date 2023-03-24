@@ -55,3 +55,7 @@ MinStack.prototype.pop = function () {
     // Returns the popped value from mainStack
     return this.mainStack.pop();
 };
+
+MinStack.prototype.top = function () {
+
+};
