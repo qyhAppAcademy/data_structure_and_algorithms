@@ -41,5 +41,9 @@ class DoublyLinkedList {
 }
 
 var LFUCache = function (capacity) {
-
+    this.capacity = capacity;
+    this.currentSize = 0;
+    this.leastFreq = 0;
+    this.nodeHash = new Map();
+    this.freqHash = new Map();
 };
