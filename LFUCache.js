@@ -61,5 +61,30 @@ LFUCache.prototype.get = function (key) {
 };
 
 LFUCache.prototype.put = function (key, value) {
+    if (this.capacity == 0) return;
+    let node = this.nodeHash.get(key);
+    if (!node) { // new node
+        this.currentSize++;
+        if (this.currentSize > this.capacity) {
+            let tailKey = this.freqHash.get(this.leastFreq).removeTail();
+            this.nodeHash.delete(tailKey);
+            this.currentSize--;
+        }
+        let newNode = new Node(key, value);
+        // freqHash housekeeping
+        if (this.freqHash.get(1) == null) this.freqHash.set(1, new DoublyLinkedList())
+        this.freqHash.get(1).insertHead(newNode);
 
+        this.nodeHash.set(key, newNode);
+        this.leastFreq = 1;
+
+    } else { // existed node
+        node.val = value;
+        this.freqHash.get(node.freq).removeNode(node);
+        if (node.freq == this.leastFreq && this.freqHash.get(node.freq).isEmpty()) this.leastFreq++;
+        node.freq++;
+        // freqHash housekeeping
+        if (this.freqHash.get(node.freq) == null) this.freqHash.set(node.freq, new DoublyLinkedList())
+        this.freqHash.get(node.freq).insertHead(node);
+    }
 };
