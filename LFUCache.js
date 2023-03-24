@@ -59,3 +59,7 @@ LFUCache.prototype.get = function (key) {
     this.freqHash.get(node.freq).insertHead(node);
     return node.val;
 };
+
+LFUCache.prototype.put = function (key, value) {
+
+};
