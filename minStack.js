@@ -49,3 +49,7 @@ MinStack.prototype.push = function (val) {
         this.minStack.push(this.minStack.top());
     }
 };
+
+MinStack.prototype.pop = function () {
+
+};
