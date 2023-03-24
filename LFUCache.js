@@ -47,3 +47,7 @@ var LFUCache = function (capacity) {
     this.nodeHash = new Map();
     this.freqHash = new Map();
 };
+
+LFUCache.prototype.get = function (key) {
+
+};
