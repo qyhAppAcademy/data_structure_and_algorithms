@@ -39,3 +39,7 @@ class DoublyLinkedList {
         return this.head.next.val == null;
     }
 }
+
+var LFUCache = function (capacity) {
+
+};
