@@ -49,5 +49,13 @@ var LFUCache = function (capacity) {
 };
 
 LFUCache.prototype.get = function (key) {
-
+    let node = this.nodeHash.get(key);
+    if (!node) return -1;
+    this.freqHash.get(node.freq).removeNode(node);
+    if (node.freq == this.leastFreq && this.freqHash.get(node.freq).isEmpty()) this.leastFreq++
+    node.freq++;
+    // freqHash housekeeping
+    if (this.freqHash.get(node.freq) == null) this.freqHash.set(node.freq, new DoublyLinkedList())
+    this.freqHash.get(node.freq).insertHead(node);
+    return node.val;
 };
